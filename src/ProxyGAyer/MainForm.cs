@@ -6,7 +6,7 @@ namespace ProxyGAyer;
 public sealed class MainForm : Form
 {
     // Change this address to update the footer's email link.
-    private const string ContactEmail = "example@gmail.com";
+    private const string ContactEmail = "sprtybi@gmail.com";
     private static readonly Color Ink = Color.FromArgb(27, 37, 57);
     private static readonly Color Muted = Color.FromArgb(101, 114, 134);
     private static readonly Color Accent = Color.FromArgb(0, 116, 109);
