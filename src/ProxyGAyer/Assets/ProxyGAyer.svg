@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">ProxyGAyer app icon</title>
+  <desc id="desc">A mint P with a right-pointing arrow cut into its center, on a rounded midnight teal tile.</desc>
+  <defs>
+    <linearGradient id="tile" x1=".12" y1="0" x2=".88" y2="1"><stop stop-color="#183740"/><stop offset="1" stop-color="#081c27"/></linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#c6ffdc"/><stop offset="1" stop-color="#70dcba"/></linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#tile)"/>
+  <rect x="9.5" y="9.5" width="237" height="237" rx="52.5" fill="none" stroke="#52877c" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M26 80Q36 24 93 24H182Q108 50 26 80" fill="#b8f8d6" opacity=".035"/>
+  <path d="M66 60H129C167 60 190 81 190 114S167 168 129 168H100V199H66ZM100 92V136H127L152 114L127 92Z" fill="url(#mark)" fill-rule="evenodd"/>
+</svg>

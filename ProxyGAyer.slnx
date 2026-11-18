@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/ProxyGAyer.Core/ProxyGAyer.Core.csproj" />
+  <Project Path="src/ProxyGAyer/ProxyGAyer.csproj" />
+</Solution>

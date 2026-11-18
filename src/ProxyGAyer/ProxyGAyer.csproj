@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>ProxyGAyer</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\ProxyGAyer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../ProxyGAyer.Core/ProxyGAyer.Core.csproj" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="Assets\ProxyGAyer.ico" LogicalName="ProxyGAyer.AppIcon" /></ItemGroup>
+</Project>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="770" viewBox="0 0 1600 770" role="img" aria-labelledby="title desc">
+  <title id="title">From one endpoint to the settings your tools understand</title>
+  <desc id="desc">A sketch showing ProxyGAyer saving independent launch profiles or tool settings. Supported tools then connect to an already running HTTP proxy. Reset restores the original configuration.</desc>
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#d8ded1"/></pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5 1 9" fill="none" stroke="#177665" stroke-width="2" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect width="1600" height="770" rx="24" fill="#f8f8f0"/>
+  <rect x="28" y="28" width="1544" height="714" rx="16" fill="url(#dots)"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#203b37">
+    <text x="66" y="77" font-size="16" font-weight="650" letter-spacing="3" fill="#52746a">THE SHORT VERSION</text>
+    <text x="64" y="136" font-size="43" font-weight="700" letter-spacing="-1">One endpoint. The settings your tools understand.</text>
+
+    <path d="M66 205Q64 198 75 200L472 201Q481 199 480 212L478 436Q481 445 470 444L74 446Q63 444 65 433Z" fill="#e0eee2" stroke="#305f50" stroke-width="2"/>
+    <path d="M70 204L475 205L474 439L70 440" fill="none" stroke="#63836a" stroke-width=".9" opacity=".6"/>
+    <text x="90" y="245" font-size="17" letter-spacing="2" font-weight="700" fill="#3b735d">01 / PROXYGAYER</text>
+    <text x="90" y="286" font-size="28" font-weight="650">Pick tools. Enter your proxy.</text>
+    <rect x="89" y="312" width="365" height="48" rx="5" fill="#f9fcf5" stroke="#9fbda6"/>
+    <text x="106" y="343" font-size="23" font-family="Consolas, monospace">127.0.0.1 : 7890</text>
+    <text x="92" y="397" font-size="20" font-family="Segoe Print, Comic Sans MS, cursive">Save the original first.</text>
+    <path d="M90 407q124 7 235 0" fill="none" stroke="#bc8260" stroke-width="2"/>
+
+    <path d="M503 308C546 307 538 251 581 252" fill="none" stroke="#177665" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <path d="M503 328C547 328 539 396 581 396" fill="none" stroke="#177665" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="507" y="286" font-size="15" fill="#58766a">SET</text>
+
+    <path d="M607 198L1036 200L1035 311L605 313Z" fill="#fffef7" stroke="#446956" stroke-width="2"/>
+    <text x="629" y="236" font-size="23" font-weight="650">Launch profiles</text>
+    <text x="629" y="267" font-size="18">CMD · PowerShell · Cargo · custom EXE</text>
+    <text x="629" y="292" font-size="16" fill="#628173">New process, its own proxy environment.</text>
+
+    <path d="M606 342L1035 344L1036 459L606 457Z" fill="#fffef7" stroke="#446956" stroke-width="2"/>
+    <text x="629" y="380" font-size="23" font-weight="650">Saved settings</text>
+    <text x="629" y="411" font-size="18">Git · npm · pip · Yarn · Gradle · Windows</text>
+    <text x="629" y="438" font-size="16" fill="#628173">Each adapter keeps its normal scope.</text>
+
+    <path d="M1063 251C1120 251 1101 319 1153 319M1063 396C1120 396 1101 337 1153 337" fill="none" stroke="#177665" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <path d="M1175 243L1534 245L1532 412L1176 413Z" fill="#d4e8dc" stroke="#305f50" stroke-width="2"/>
+    <text x="1202" y="287" font-size="17" letter-spacing="2" font-weight="700" fill="#3b735d">02 / USE YOUR TOOLS</text>
+    <text x="1202" y="335" font-size="25" font-family="Consolas, monospace">git fetch</text>
+    <text x="1202" y="372" font-size="25" font-family="Consolas, monospace">npm install</text>
+
+    <path d="M1339 438C1340 474 1428 479 1426 514" fill="none" stroke="#177665" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="1325" y="478" font-size="15" text-anchor="end" fill="#58766a">NETWORK REQUESTS</text>
+    <rect x="1169" y="535" width="363" height="92" rx="9" fill="#1c5143"/>
+    <text x="1350" y="574" text-anchor="middle" font-size="24" font-weight="650" fill="#f0f7ec">Your running HTTP proxy</text>
+    <text x="1350" y="603" text-anchor="middle" font-size="17" fill="#c7e1cb">HTTPS destinations use CONNECT</text>
+
+    <path d="M985 495C984 580 535 589 365 475" fill="none" stroke="#a37355" stroke-width="2" stroke-dasharray="7 6"/>
+    <path d="M365 475l5 16m-5-16l17 2" fill="none" stroke="#a37355" stroke-width="2"/>
+    <text x="588" y="549" font-size="23" fill="#936448" font-family="Segoe Print, Comic Sans MS, cursive">RESET = restore the original.</text>
+    <text x="66" y="680" font-size="20" font-weight="600">ProxyGAyer configures the route. Your proxy carries the traffic.</text>
+    <text x="66" y="714" font-size="17" fill="#628173">Tools must support proxy settings. Shared Windows / user environment settings can affect other compatible apps.</text>
+  </g>
+</svg>
