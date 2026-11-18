@@ -48,6 +48,15 @@ The app uses native Windows Forms, has zero third-party NuGet dependencies, and 
 
 ## Quickstart
 
+### Download a release
+
+Open [Releases](https://github.com/SprTybi/ProxyGAyer/releases) and choose a build:
+
+- **Standalone EXE:** .NET is included; run the single file directly.
+- **Small EXE / ZIP:** install [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) first.
+
+Both target Windows 10/11 x64. The standalone download is larger because it includes its runtime.
+
 ### Build from this checkout
 
 On Windows, install the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and Git, then run these commands in the repository root:
@@ -62,7 +71,7 @@ The script runs the checks, publishes the app, and creates `artifacts/ProxyGAyer
 <details>
 <summary><strong>Already have a packaged build?</strong></summary>
 
-Install the **.NET 10 Desktop Runtime** from the [.NET download page](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), extract the whole ZIP, and run `ProxyGAyer.exe`. Keep the DLLs and runtime configuration beside the executable. The package is framework-dependent; the runtime is a separate prerequisite.
+The standalone EXE includes .NET and needs no adjacent DLLs. The small EXE and ZIP require the **.NET 10 Desktop Runtime** from the [.NET download page](https://dotnet.microsoft.com/en-us/download/dotnet/10.0). Extract ZIP builds before running them. If you use the regular folder build from `build.ps1`, keep its DLLs and runtime configuration beside the executable.
 
 </details>
 
@@ -205,11 +214,16 @@ The app compares the current resource with its journal before restoring. It stop
 # Run the checks, publish the app, and package it.
 .\build.ps1
 
+# Build single-file light + standalone EXEs, a ZIP, and checksums.
+.\build-release.ps1 -Version 1.0.0
+
 # Refresh the README screenshots after building. Close the app first.
 .\scripts\update-screenshots.ps1
 ```
 
 The build requires the .NET 10 SDK and Windows Desktop targeting pack already installed. `NuGet.Config` clears package feeds because the app has no third-party package dependencies. Git is used to verify the real configuration parser. The checks exercise isolated resource stores, workspace fixtures, and local proxy servers, including HTTP forwarding and HTTPS CONNECT; they leave your actual proxy settings untouched.
+
+`build-release.ps1` uses Microsoft's SDK/runtime packages from the official NuGet feed when needed. Outputs stay in this repository's ignored `artifacts/releases/v1.0.0` directory. Push a version tag, or run **Actions → Release** on GitHub, to build and publish release assets automatically. See the [release guide](docs/RELEASING.fa.md); running the local build script alone does not publish anything.
 
 Screenshot capture uses the app's `--preview` mode. It exercises Set / Reset, Reset All, batch selection, and endpoint validation against in-memory resources. Only the PNGs are copied into `docs/assets/`; private state and generated builds stay outside those public assets.
 
@@ -218,6 +232,8 @@ src/ProxyGAyer/          Native UI, batch selection, advanced settings
 src/ProxyGAyer.Core/     Adapters, scope, profiles, journals, connection test
 tests/ProxyGAyer.Tests/  Dependency-free verification harness
 docs/assets/            Original SVG artwork and actual app screenshots
+scripts/                Screenshot and icon authoring helpers
+.github/workflows/      Tag-triggered and manual release publishing
 ```
 
 Adding a native integration? Start with [`ServiceCatalog`](src/ProxyGAyer.Core/Models.cs) and [`ConfigPlanner`](src/ProxyGAyer.Core/ConfigPlanner.cs), state its scope, and cover restore behavior. For a bug report, include the section, OS / tool version, and relevant result text, with credentials removed.

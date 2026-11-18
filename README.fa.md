@@ -56,6 +56,15 @@
 
 ## شروع سریع
 
+### دانلود ریلیز
+
+در بخش [Releases](https://github.com/SprTybi/ProxyGAyer/releases) نسخهٔ دلخواه را انتخاب کن:
+
+- **EXE مستقل یا Standalone:** دات‌نت داخل فایل قرار دارد؛ همان یک فایل را اجرا کن.
+- **EXE سبک یا ZIP:** ابتدا [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) را نصب کن.
+
+هر دو نسخه برای Windows 10/11 x64 هستند. نسخهٔ مستقل به‌دلیل داشتن runtime بزرگ‌تر است.
+
 ### ساخت از همین مخزن
 
 روی ویندوز، [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) و Git را نصب کن و در ریشهٔ پروژه این دستورها را اجرا کن:
@@ -74,7 +83,7 @@
 <details>
 <summary><strong>نسخهٔ بسته‌بندی‌شده را داری؟</strong></summary>
 
-از [صفحهٔ دانلود .NET](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)، **.NET 10 Desktop Runtime** را نصب کن. کل ZIP را استخراج کن و `ProxyGAyer.exe` را اجرا کن. DLLها و فایل‌های تنظیم runtime باید کنار فایل اجرایی بمانند؛ خروجی فعلی به runtime جداگانه نیاز دارد.
+نسخهٔ Standalone دات‌نت را داخل خودش دارد و به DLL کنار فایل نیاز ندارد. برای نسخهٔ سبک، از [صفحهٔ دانلود .NET](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)، **.NET 10 Desktop Runtime** را نصب کن. ZIP را پیش از اجرا استخراج کن. اگر از خروجی پوشه‌ای `build.ps1` استفاده می‌کنی، DLLها و فایل‌های تنظیم runtime را کنار فایل اجرایی نگه دار.
 
 </details>
 
@@ -231,6 +240,9 @@ Git برای همهٔ مخزن‌های همان کاربر تنظیم می‌ش
 # Run checks, publish, and package.
 .\build.ps1
 
+# Build light + standalone EXEs, a ZIP, and checksums.
+.\build-release.ps1 -Version 1.0.0
+
 # Refresh README screenshots after building. Close the app first.
 .\scripts\update-screenshots.ps1
 ```
@@ -238,6 +250,8 @@ Git برای همهٔ مخزن‌های همان کاربر تنظیم می‌ش
 <div dir="rtl">
 
 ساخت به .NET 10 SDK و Windows Desktop targeting pack از پیش نصب‌شده نیاز دارد. `NuGet.Config` منبع بسته‌ها را خالی می‌کند، چون برنامه وابستگی شخص ثالث ندارد. آزمون‌ها از parser واقعی Git، منابع حافظه‌ای، فایل‌های آزمایشی و سرورهای پروکسی محلی برای HTTP و HTTPS CONNECT استفاده می‌کنند؛ تنظیمات واقعی پروکسی کاربر را تغییر نمی‌دهند.
+
+اسکریپت `build-release.ps1` در صورت نیاز بسته‌های SDK و runtime مایکروسافت را از NuGet رسمی دریافت می‌کند. خروجی‌ها در مسیر نادیده‌گرفته‌شدهٔ `artifacts/releases/v1.0.0` داخل همین مخزن ساخته می‌شوند. برای ساخت و انتشار خودکار، تگ نسخه را Push کن یا در GitHub، **Actions → Release** را اجرا کن. [راهنمای ریلیز](docs/RELEASING.fa.md) مراحل را توضیح می‌دهد؛ اجرای اسکریپت محلی به‌تنهایی چیزی منتشر نمی‌کند.
 
 اسکرین‌شات‌ها با حالت `--preview` خود برنامه ساخته می‌شوند. این حالت Set و Reset، بازگردانی همه، انتخاب گروهی و اعتبارسنجی آدرس‌ها را با منابع حافظه‌ای بررسی می‌کند. فقط PNGها به `docs/assets/` کپی می‌شوند؛ فایل وضعیت خصوصی و خروجی‌های ساخت وارد تصویرهای عمومی نمی‌شوند.
 
